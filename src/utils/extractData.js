@@ -31,7 +31,13 @@ export function extractData(html, url) {
   const avatarElement = $(
     `a[href="${userElement.attr('href')}"] img[alt="${authorName}"]`,
   )
-  const avatarUrl = `${domain}${avatarElement.attr('src')}`
+
+    let avatarUrl = avatarElement.attr('src');
+
+    if (avatarUrl && !avatarUrl.includes('https')) {
+        avatarUrl = `${domain}${avatarUrl}`;
+    }
+
   logger.info(`Avatar image src extracted: "${avatarUrl}"`)
 
   return {
