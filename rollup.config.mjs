@@ -6,8 +6,8 @@ export default {
   input: 'src/index.js',
   output: {
     file: 'dist/index.js',
-    format: 'cjs', // Formato CommonJS para Node.js
-    inlineDynamicImports: true, // Inlines all dynamic imports into a single file
+    format: 'cjs',
+    inlineDynamicImports: true,
   },
   plugins: [nodeResolve(), commonjs(), json()],
 }

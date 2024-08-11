@@ -38,3 +38,4 @@ test.json
 .env
 .idea
 dist
+/temp
